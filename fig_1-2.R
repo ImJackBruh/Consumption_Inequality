@@ -1,7 +1,7 @@
 # Calculate Var. and Gini coef. etc.
 # Author: BoYanHuang
 # Created Jun 7, 2025
-# Last modify Jun 12, 2025 by BoYanHuang
+# Last modify Jun 13, 2025 by BoYanHuang
 
 library(tidyverse)
 library(DescTools)
@@ -30,7 +30,7 @@ ggplot(df_Fig_1_wage, aes(x = year, y = Var_wage)) +
 ggsave("Fig_1//Fig_1a_Var_Earnings.png", dpi = 600, width = 4, height = 4)
 ggplot(df_Fig_1_wage, aes(x = year, y = Gini_wage)) +
     geom_line(colour = "blue", linewidth = 1) +
-    labs(title = "Gini Coefficient of Equiz. HH Earnings", x = "Year", y = "Gini Coefficient") +
+    labs(title = "Gini Coefficient of Equiv. HH Earnings", x = "Year", y = "Gini Coefficient") +
     theme(plot.title = element_text(hjust = 0.5))
 ggsave("Fig_1//Fig_1b_Gini_Earnings.png", dpi = 600, width = 4, height = 4)
 ggplot(df_Fig_1_wage, aes(x = year, y = P50_P10)) +

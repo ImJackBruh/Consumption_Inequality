@@ -1,7 +1,7 @@
 # Calculate Var. and Gini coef. etc.
 # Author: BoYanHuang
 # Created Jun 12, 2025
-# Last modify Jun 12, 2025 by BoYanHuang
+# Last modify Jun 13, 2025 by BoYanHuang
 
 library(tidyverse)
 library(DescTools)
@@ -27,18 +27,18 @@ summary(df_all$inc_earnings_max)
 
 # Fig 5 From individual to HH inequality
 df_Fig_3_indHH <- df_all %>% group_by(year) %>% 
-    summarise(Var_wage_max = weighted.var(log(inc_earnings_max, exp(1)), weight, na.rm = T),
-              Var_wage_HH = weighted.var(log(inc_earnings, exp(1)), weight, na.rm = T),
-              Gini_wage_max = Gini(inc_earnings_max, weight, na.rm = T),
-              Gini_wage_HH = Gini(inc_earnings, weight, na.rm = T))
+    summarise(Var_earnings_max = weighted.var(log(inc_earnings_max, exp(1)), weight, na.rm = T),
+              Var_earnings_HH = weighted.var(log(inc_earnings, exp(1)), weight, na.rm = T),
+              Gini_earnings_max = Gini(inc_earnings_max, weight, na.rm = T),
+              Gini_earnings_HH = Gini(inc_earnings, weight, na.rm = T))
 # plot
 colors <- c("Main Earner" = "blue", "Household" = "red")
 ggplot(df_Fig_3_indHH) +
-    geom_line(aes(x = year, y = Var_wage_max, colour = "Main Earner"), linewidth = 1) +
-    geom_line(aes(x = year, y = Var_wage_HH, colour = "Household"), linewidth = 1) +
+    geom_line(aes(x = year, y = Var_earnings_max, colour = "Main Earner"), linewidth = 1) +
+    geom_line(aes(x = year, y = Var_earnings_HH, colour = "Household"), linewidth = 1) +
     scale_x_continuous(name = "Year",limits = c(1981, 2022)) +
     scale_y_continuous(name = "Variance of Log") +
-    labs(title = "Variance of Log Salary Income") +
+    labs(title = "Variance of Log Earnings") +
     scale_color_manual(
         guide = guide_legend(title = NULL),
         values = colors,
@@ -49,11 +49,11 @@ ggplot(df_Fig_3_indHH) +
           legend.position = c(0.17, 0.75))
 ggsave("Fig_3//Fig_3a_Var_indHH.png", dpi = 600, width = 5, height = 3)
 ggplot(df_Fig_3_indHH) +
-    geom_line(aes(x = year, y = Gini_wage_max, colour = "Main Earner"), linewidth = 1) +
-    geom_line(aes(x = year, y = Gini_wage_HH, colour = "Household"), linewidth = 1) +
+    geom_line(aes(x = year, y = Gini_earnings_max, colour = "Main Earner"), linewidth = 1) +
+    geom_line(aes(x = year, y = Gini_earnings_HH, colour = "Household"), linewidth = 1) +
     scale_x_continuous(name = "Year",limits = c(1981, 2022)) +
     scale_y_continuous(name = "Gini Coefficient") +
-    labs(title = "Gini of Total Income") +
+    labs(title = "Gini Coefficient of Earnings") +
     scale_color_manual(
         guide = guide_legend(title = NULL),
         values = colors,
@@ -66,13 +66,13 @@ ggsave("Fig_3//Fig_3b_Gini_indHH.png", dpi = 600, width = 5, height = 3)
 # single/married
 colors <- c("0" = "blue", "1" = "red")
 df_Fig_3_single <- df_all %>% group_by(year, marriage) %>% 
-    summarise(Var_wage = weighted.var(log(inc_earnings, exp(1)), weight, na.rm = T)) %>%
+    summarise(Var_earnings = weighted.var(log(inc_earnings, exp(1)), weight, na.rm = T)) %>%
     filter(!is.na(marriage))
-ggplot(df_Fig_3_single, aes(x = year, y = Var_wage, colour = factor(marriage))) +
+ggplot(df_Fig_3_single, aes(x = year, y = Var_earnings, colour = factor(marriage))) +
     geom_line(linewidth = 1) +
     scale_x_continuous(name = "Year",limits = c(1988, 2022)) +
-    scale_y_continuous(name = "Gini Coefficient") +
-    labs(title = "Gini of Total Income") +
+    scale_y_continuous(name = "Variance of Log") +
+    labs(title = "Variance of Log Earnings") +
     scale_color_manual(
         guide = guide_legend(title = NULL),
         values = colors,
@@ -108,7 +108,7 @@ ggplot(df_Fig_3_correlation, aes(x = year, y = correlation)) +
     geom_line(colour = "blue", linewidth = 1) +
     scale_x_continuous(name = "Year",limits = c(1988, 2022)) +
     scale_y_continuous(name = "Correlation") +
-    labs(title = "Between-Spouse Corr. of Log Salary Income \n Among Two-Earner Cohabiting Couples") +
+    labs(title = "Between-Spouse Corr. of Log Earnings \n Among Two-Earner Cohabiting Couples") +
     theme(plot.title = element_text(hjust = 0.5))
 ggsave("Fig_3//Fig_3f_correlation.png", dpi = 600, width = 5, height = 3)
 
@@ -154,7 +154,7 @@ ggplot(df_Fig_4_inc) +
     geom_line(aes(x = year, y = Gini_2), colour = colors[2], linewidth = 1) +
     geom_line(aes(x = year, y = Gini_3), colour = colors[3], linewidth = 1) +
     geom_line(aes(x = year, y = Gini_4), colour = colors[4], linewidth = 1) +
-    labs(title = "Gini of Log Income", x = "Year", y = "Gini Coefficient") +
+    labs(title = "Gini of Income", x = "Year", y = "Gini Coefficient") +
     theme(plot.title = element_text(hjust = 0.5),
           legend.position = c(0.17, 0.75))
 ggsave("Fig_4//Fig_4b_Gini_inc.png", dpi = 600, width = 4, height = 4)
@@ -179,7 +179,7 @@ ggplot(df_Fig_4_inc) +
     geom_line(aes(x = year, y = Gini_1), colour = colors[1], linewidth = 1) +
     geom_line(aes(x = year, y = Gini_2), colour = colors[2], linewidth = 1) +
     geom_line(aes(x = year, y = Gini_4), colour = colors[4], linewidth = 1) +
-    labs(title = "Gini of Log Income", x = "Year", y = "Gini Coefficient") +
+    labs(title = "Gini of Income", x = "Year", y = "Gini Coefficient") +
     theme(plot.title = element_text(hjust = 0.5),
           legend.position = c(0.17, 0.75))
 ggsave("Fig_4//Fig_4d_Gini_inc.png", dpi = 600, width = 4, height = 4)
@@ -222,7 +222,7 @@ ggsave("Fig_5//Fig_5a_Var_inc.png", dpi = 600, width = 4, height = 4)
 ggplot(df_Fig_5_gov) +
     geom_line(aes(x = year, y = Gini_1, colour = "Pre-Govt. Income"), linewidth = 1) +
     geom_line(aes(x = year, y = Gini_2, colour = "Pre-Tax Income"), linewidth = 1) +
-    labs(title = "Gini of Log Income", x = "Year", y = "Gini Coefficient") +
+    labs(title = "Gini of Income", x = "Year", y = "Gini Coefficient") +
     scale_color_manual(
         guide = guide_legend(title = NULL),
         values = colors,
@@ -249,7 +249,7 @@ ggsave("Fig_5//Fig_5c_Var_inc.png", dpi = 600, width = 4, height = 4)
 ggplot(df_Fig_5_gov) +
     geom_line(aes(x = year, y = Gini_2, colour = "Pre-Tax Income"), linewidth = 1) +
     geom_line(aes(x = year, y = Gini_3, colour = "Disposable Income"), linewidth = 1) +
-    labs(title = "Gini of Log Income", x = "Year", y = "Gini Coefficient") +
+    labs(title = "Gini of Income", x = "Year", y = "Gini Coefficient") +
     ylim(0.26, 0.34) +
     scale_color_manual(
         guide = guide_legend(title = NULL),

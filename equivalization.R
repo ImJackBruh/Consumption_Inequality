@@ -1,7 +1,7 @@
 # Extract column needed and equivalize them
 # Author: BoYanHuang
 # Created Jun 7, 2025
-# Last modify Jun 12, 2025 by BoYanHuang
+# Last modify Jun 13, 2025 by BoYanHuang
 
 library(tidyverse)
 library(haven)
@@ -91,6 +91,32 @@ for(y in years){
                                                             spouse_id == 8 ~ itm198 + itm248,
                                                             TRUE ~ NA))
     }
+
+    # fill 0 for NA in itm590, itm610, itm620, itm710, itm730
+    if(y < 98){
+    inc_y <- inc_y %>% mutate(itm590 = replace_na(itm590, 0),
+                              itm610 = replace_na(itm610, 0),
+                              itm620 = replace_na(itm620, 0),
+                              itm710 = replace_na(itm710, 0),
+                              itm730 = replace_na(itm730, 0))
+    }else if(y == 98){
+    inc_y <- inc_y %>% mutate(itm590 = replace_na(itm590, 0),
+                              itm610 = replace_na(itm610, 0),
+                              itm620 = replace_na(itm620, 0),
+                              itm710 = replace_na(itm710, 0),
+                              itm726 = replace_na(itm726, 0),
+                              itm727 = replace_na(itm727, 0),
+                              itm845 = replace_na(itm845, 0))
+    }else{
+    inc_y <- inc_y %>% mutate(itm590 = replace_na(itm590, 0),
+                              itm610 = replace_na(itm610, 0),
+                              itm620 = replace_na(itm620, 0),
+                              itm1201 = replace_na(itm1201, 0),
+                              itm1202 = replace_na(itm1202, 0),
+                              itm1203 = replace_na(itm1203, 0))
+    }
+
+
     # expenditure/consumption
     inc_y <- inc_y %>% mutate(exp_interest = itm540 / eqi_w,
                             exp_tax = (itm590 + itm610 + itm620) / eqi_w,
@@ -98,15 +124,15 @@ for(y in years){
     # exp_food <99 itm710+itm731 >=99 itm1010, exp_consumption <99 itm800 >=99 itm1000, exp_housing <99 itm760 >=99 itm1040
     if(y == 98){
         inc_y <- inc_y %>% mutate(exp_consumption = itm800 / eqi_w,
-                                exp_food = (itm710+itm731) / eqi_w,
+                                exp_food = (itm710 + itm726 + itm727 + itm845) / eqi_w,
                                 exp_housing = itm1003 / eqi_w)
-    }else if(y < 99){
+    }else if(y < 98){
         inc_y <- inc_y %>% mutate(exp_consumption = itm800 / eqi_w,
-                                exp_food = (itm710+itm731) / eqi_w,
+                                exp_food = (itm710 + itm730) / eqi_w,
                                 exp_housing = itm760 / eqi_w)
     }else{
         inc_y <- inc_y %>% mutate(exp_consumption = itm1000 / eqi_w,
-                                exp_food = itm1010 / eqi_w,
+                                exp_food = (itm1010 + itm1201 + itm1202 + itm1203) / eqi_w,
                                 exp_housing = itm1040 / eqi_w)
     }
 

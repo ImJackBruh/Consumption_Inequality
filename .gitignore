@@ -102,6 +102,14 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+# Files built by LaTeX Complier
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.synctex(busy)
+
 # Chutzpah Test files
 _Chutzpah*
 

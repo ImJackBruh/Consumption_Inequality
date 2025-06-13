@@ -409,6 +409,12 @@ FodyWeavers.xsd
 *.out
 *.synctex.gz
 *.synctex(busy)
+*.bbl
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.dvi
 
 # JetBrains Rider
 *.sln.iml

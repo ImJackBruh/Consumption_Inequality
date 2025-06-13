@@ -1,5 +1,5 @@
 # Introduction
-This is my term paper "Consumption Inequality" for Labor Economics I using Survey of Family Income and Expenditure 1981 - 2023
+This is my term paper "Consumption Inequality" for Labor Economics (I) using Survey of Family Income and Expenditure 1981 - 2023
 
 # Reference
 <p style="padding-left: 4em; text-indent: -4em;">

@@ -1,3 +1,4 @@
+% \documentclass[draft]{article}
 \documentclass{article}
 
 \title{Income and Consumption Inequality in Taiwan, 1981 - 2023}
@@ -37,7 +38,7 @@ For example, households may purchase goods in bulk or invest in durable goods, w
 Another example is that consumption can be produced at home using time and goods, like childcare and home-cooked meals. Also, households may have different preferences for leisure and consumption, which can lead to differences in how they allocate their resources.
 The most challenging problem to overcome is the assumption that all households face the same prices for goods and services. This assumption violates the nature of durable goods such as housing and automobiles, which can have enormous price variations. Ignoring these differences can lead to an inaccurate representation of consumption patterns and inequality.
 
-This paper uses SFID data to comprehensively analyze income and consumption inequality in Taiwan from 1981 to 2023 to fill in the missing pieces of inequality dynamics after 2008. This is interesting because economic growth in Taiwan has slowed since the 2008 financial crisis, and the COVID-19 pandemic has further exacerbated the situation.
+This paper uses SFIE data to comprehensively analyze income and consumption inequality in Taiwan from 1981 to 2023 to fill in the missing pieces of inequality dynamics after 2008. This is interesting because economic growth in Taiwan has slowed since the 2008 financial crisis, and the COVID-19 pandemic has further exacerbated the situation.
 The income distribution between households was stable before 1994, and the Gini coefficient for individual earnings stabilized at around 0.30 due to many factors (Bourguignon, Fournier, \& Gurgand, \citeyear{TW_stable_dist}).
 However, the Gini coefficient for household earnings has increased since 1994, reaching 0.35 in 2023, as shown in the top right panel of Figure \ref{fig:Indi_to_HH}.
 This suggests that economic inequality will become a problem after economic growth slows down, even in a country with steady income distribution previously, like Taiwan.
@@ -57,12 +58,10 @@ The survey samples around 16,000 households each year; however, the NA rate of s
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/missing/itm190.png}
-        \label{fig:missing_labor}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/missing/itm240.png}
-        \label{fig:missing_industry}
     \end{subfigure}
     \caption{Missing Rate of Labor Earnings and Industry Earnings in SFIE}
     \label{fig:missing}
@@ -104,22 +103,18 @@ In this section, I will follow the structure of Heathcote, Perri, \& Violante (\
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_1/Fig_1a_Var_Earnings.png}
-        \label{fig:earnings_inequality_Var}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_1/Fig_1b_Gini_Earnings.png}
-        \label{fig:earnings_inequality_Gini}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_1/Fig_1c_P50_P10_Earnings.png}
-        \label{fig:earnings_inequality_P50_P10}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_1/Fig_1d_P90_P50_Earnings.png}
-        \label{fig:earnings_inequality_P90_P50}
     \end{subfigure}
     \caption{Various Measures of Household Earnings Inequality}
     \label{fig:earnings_inequality}
@@ -150,6 +145,10 @@ The reason for this choice is that all the percentiles grew over 100 log points 
 This finding coincides with Bourguignon, Fournier, \& Gurgand (\citeyear{TW_stable_dist}) that before 1994, the income of Taiwanese households was in both a fast developing and stable environment.
 Therefore, putting years before 1995 in the main figure could dilute the interpretation of recent trends, as the rapid growth phase would dominate the visual impression. By focusing on the period after 1995, we can better highlight the cyclical and structural changes in earnings inequality that occurred after Taiwan's high-growth era ended. This approach allows for a more precise analysis of the dynamics relevant to the current policy and economic environment.
 
+We can see the fanning out of the earning distribution over time, especially for the lower percentiles, such as the 5th and 10th percentiles. The bottom 10\% almost did not grow from 1995 to 2023, and the bottom 5\% declined by over 40 log points, even worse than 1990. The decline of P5 after 2000 is particularly striking; this can be attributed to the COVID-19 pandemic, which has disproportionately affected low-income households in Taiwan, as in many other countries.
+In contrast, the difference in income growth of the top half distribution is minimal compared to the bottom half and can even neglect the top 5\% and 10\%, who have grown by about 25 log points since 1995. This contributes to the decrease in the P90-P50 ratio shown in the bottom right of Figure \ref{fig:earnings_inequality}.
+
+Inequality tends to widen during the recession, such as the Dot-com bubble in 2000, the Global Financial Crisis in 2008, and the COVID-19 pandemic in 2020. The reason behind this phenomenon is that when facing external shocks, households with higher earnings are more likely to have diversified income sources, such as investments and insurance transfers, which can help them weather economic downturns better than those with lower earnings who rely more on labor income. We can also observe this phenomenon in the percentiles of earnings distribution, where the lower percentiles tend to decline sharply while the upper percentiles remain relatively stable.
 
 \subsection{From Individual to Household Inequality}
 
@@ -158,36 +157,34 @@ Therefore, putting years before 1995 in the main figure could dilute the interpr
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_3/Fig_3a_Var_indHH.png}
-        \label{fig:Indi_to_HH_Var}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_3/Fig_3b_Gini_indHH.png}
-        \label{fig:Indi_to_HH_Gini}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_3/Fig_3c_Var_single.png}
-        \label{fig:Indi_to_HH_Var_single}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_3/Fig_3d_married_ratio.png}
-        \label{fig:Indi_to_HH_married_ratio}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_3/Fig_3e_two_earner_ratio.png}
-        \label{fig:Indi_to_HH_two_earner_ratio}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_3/Fig_3f_correlation.png}
-        \label{fig:Indi_to_HH_correlation}
     \end{subfigure}
     \caption{Understanding the role of the Family for Earnings Inequality}
     \label{fig:Indi_to_HH}
 \end{figure}
+
+Next, we look at the role of the family in household earnings inequality. The top 2 panels of Figure \ref{fig:Indi_to_HH} show the variance and Gini coefficient of main earner earnings and household earnings. The trend is quite similar, with the household earnings having a slightly higher Gini coefficient. This is a shocking result, as we usually expect the household smoothing the income due to the pooling of resources within families. I do not have a clear answer for this now, but I suspect that the reason is the household structure in SFIE, as shown in the bottom left panel of Figure \ref{fig:Indi_to_HH}, the ratio of two-earner households has been decreasing in our data set, which is not usually the case. The decline in two-earner households we observe can be due to higher-income couples tending to split up their household ID, which can avoid some housing and land tax.
+
+The middle two panels of Figure \ref{fig:Indi_to_HH} show the relation between single and married households. The decreasing fraction of married households contributes to the smaller inequality gap between married and single households. The bottom right panel shows the between-spouse earnings correlation among two-earner cohabiting households, which I also do not know how to interpret now. Initially, I expect the correlation to increase over time, as the two-earner households are more likely to be from the same educational background and have similar earnings. However, the correlation has decreased since 2008, which is the opposite of what I expected. This could also be due to the household structure we discussed above, as the two-earner households that split up would be discarded in our correlation calculation.
 
 \subsection{Private Transfers and Asset Income}
 
@@ -196,88 +193,85 @@ Therefore, putting years before 1995 in the main figure could dilute the interpr
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_4/Fig_4a_Var_inc.png}
-        \label{fig:Trans_Asset_Var1}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_4/Fig_4b_Gini_inc.png}
-        \label{fig:Trans_Asset_Gini1}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_4/Fig_4c_Var_inc.png}
-        \label{fig:Trans_Asset_Var2}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_4/Fig_4d_Gini_inc.png}
-        \label{fig:Trans_Asset_Gini2}
     \end{subfigure}
     \caption{From Household Earnings to Pre-Government Income}
     \label{fig:Trans_Asset}
 \end{figure}
 
-\subsection{Government Redistribution}
+In Figure \ref{fig:Trans_Asset}, we discuss other income sources beyond basic earnings, including investment in assets and private transfers. 
+We can see that asset income increases inequality while transfers reduce it, suggesting that there is a negative correlation between income and private transfers. 
+This correlation aligns with the assumption that beyond the household, the family or clan can smooth out income shock using private transfer. 
+In particular, the effect of private transfer smoothing out asset inequality was not effective before 1995. However, it has played a key role in reducing inequality since 2010.
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_5/Fig_5a_Var_inc.png}
-        \label{fig:Gov_Var1}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_5/Fig_5b_Gini_inc.png}
-        \label{fig:Gov_Gini1}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_5/Fig_5c_Var_inc.png}
-        \label{fig:Gov_Var2}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_5/Fig_5d_Gini_inc.png}
-        \label{fig:Gov_Gini2}
     \end{subfigure}
     \caption{From Pre-Government to Disposable Income}
     \label{fig:Gov}
 \end{figure}
 
-The result shows that the smoothing effect of the family, such as private transfer, is significant, and the government redistribution also has a significant effect on income inequality.
+\subsection{Government Redistribution}
+
+We move on to government redistribution in Figure \ref{fig:Gov}. Redistribution plays a significant role in reducing income inequality. We can see that although both subsidy and taxation measures reduce inequality, welfare systems such as public health insurance and labor insurance have a more substantial redistribution effect. The benefits reduce the Gini coefficient for about 3 log points, and tax further reduces it by 0.5 log points, resulting in a much smoother trend.
+
+Compared to the increased variance and Gini coefficient of Pre-Government income, redistribution successfully stabilized the income inequality, making the Gini coefficient stable around 0.3. However, the government did not smooth out the drastic increase of inequalities during recessions like the Dot-com bubble in 2000 and the Global Financial Crisis in 2008. Surprisingly, COVID-19 after 2020 did not increase inequalities significantly; this can be due to the government's subsidy and expenditure, which successfully stabilized the disparity at the time.
 
 \subsection{From Income to Consumption Inequality}
 
-\begin{figure}
+The rest of this section discusses consumptions and expenditures. Figure \ref{fig:Consumption} shows the exact four measurements of Figure \ref{fig:earnings_inequality} for disposable income and consumption; the result highlights the effect of consumption smoothing. Since households can borrow and save to maintain consumption when facing income shock, consumption inequality is smaller than income.
+
+Surprisingly, compared to the US, where consumption inequality increased, consumption discrepancies in Taiwan decreased steadily after 1995. One of the reasons could be the low consumption growth rate of wealthy families, as shown in figure \ref{fig:Consumption_cyclic}. The consumption expenditures of the top 5\% families only grow about 12 log points compared to 36 log points in the lowest 25 \%. 
+
+These consumption phenomena could negatively impact Taiwan's economy, suggested by Hong (\citeyear{TW_stable_dist}), since wealthy families do not increase their consumption and lower-income families face higher housing and health insurance burdens. Eventually, this led to a stagnation of Taiwan's economy.
+
+\begin{figure}[p]
     \centering
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_6/Fig_6a.png}
-        \label{fig:Consumption_Var}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_6/Fig_6b.png}
-        \label{fig:Consumption_Gini}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_6/Fig_6c.png}
-        \label{fig:Consumption_P50_P10}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_6/Fig_6d.png}
-        \label{fig:Consumption_P90_P50}
     \end{subfigure}
     \caption{From Disposable Income to Consumption}
     \label{fig:Consumption}
-\end{figure}
-
-\subsection{Cyclical Dynamics of Consumption Inequality}
-
-\begin{figure}
+    \vspace{1em}
     \centering
     \includegraphics[width=0.95\textwidth]{figures/Fig_7/Fig_7_percentiles_a1995.png}
     \caption{Percentiles of the Household Consumption Distribution}
@@ -291,32 +285,42 @@ The result shows that the smoothing effect of the family, such as private transf
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_8/Fig_8a_Var_Food.png}
-        \label{fig:Food_Var}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_8/Fig_8b_Gini_Food.png}
-        \label{fig:Food_Gini}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_8/Fig_8c_Var_Housing.png}
-        \label{fig:Housing_Var}
     \end{subfigure}
     \begin{subfigure}[t]{0.475\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/Fig_8/Fig_8d_Gini_Housing.png}
-        \label{fig:Housing_Gini}
     \end{subfigure}
     \caption{Food and Housing Consumption Inequality}
     \label{fig:Food_Housing}
 \end{figure}
 
+The final Figure \ref{fig:Food_Housing} highlights the inequalities in food and housing consumption in Taiwan. The Gini coefficients and variances presented in the figure indicate that the food expenditure discrepancies remain relatively small, and housing consumption inequality is steadily decreasing.
+
+I do not have a strong theory about the decrease in food consumption inequality after 2010, maybe this is due to some change in the calculation of the SFIE.
+
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-\newpage
+This paper provides a comprehensive overview of the long-run evolution of income and consumption inequality in Taiwan from 1981 to 2023 using household-level data from the SFIE. The findings highlight several key trends and shifts over the past four decades. While income inequality has generally increased—especially since the mid-1990s—consumption inequality has remained relatively stable or declined, indicating the importance of consumption smoothing mechanisms such as saving, borrowing, and intra-family transfers.
+
+The analysis shows that although the variance and Gini coefficient of household earnings have risen, the extent of inequality growth in Taiwan remains modest compared to advanced economies like the United States. Notably, inequality is most pronounced at the bottom of the earnings distribution, where low-income households have experienced stagnation or even decline, particularly during recessionary periods such as the Dot-com bubble, the Global Financial Crisis, and the COVID-19 pandemic.
+
+Government redistribution through welfare programs and taxation has helped stabilize disposable income inequality, though its effectiveness varies across time and crises. The role of private transfers—especially since 2010—has also become more significant in mitigating inequality, emphasizing the extended family's role as a buffer.
+
+Perhaps most intriguingly, the paper documents a declining trend in consumption inequality, driven partly by the low consumption growth of wealthy households and potentially concerning stagnation among higher-income groups. This divergence between income and consumption dynamics underscores the complexity of economic inequality and calls for more nuanced policy responses.
+
+While Taiwan's inequality remains moderate by international standards, emerging structural shifts in family composition, consumption behavior, and income distribution point to growing vulnerabilities. Further work should investigate the causes behind these demographic, institutional changes and evaluate policies that could promote inclusive growth in an era of slower economic expansion.
+
+
 
 % Format for bibliography
 \DeclareFieldFormat[misc]{title}{{#1}}
@@ -333,7 +337,7 @@ The result shows that the smoothing effect of the family, such as private transf
 
 \vspace{2em}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.88\textwidth]{figures/Fig_2/Fig_2_percentiles_1981.png}
     \caption{Percentiles of the Household Earnings Distribution, 1981 - 2023}
@@ -342,21 +346,21 @@ The result shows that the smoothing effect of the family, such as private transf
 
 \vspace{4em} 
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.88\textwidth]{figures/Fig_2/Fig_2_percentiles_1995.png}
     \caption{Percentiles of the Household Earnings Distribution, 1981 - 2023}
     \label{fig:appendix_cyclic_earnings_1995}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.88\textwidth]{figures/Fig_7/Fig_7_percentiles_1981.png}
     \caption{Percentiles of the Household Consumption Distribution, 1981 - 2023}
     \label{fig:appendix_cyclic_consumption_1981}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.88\textwidth]{figures/Fig_7/Fig_7_percentiles_1995.png}
     \caption{Percentiles of the Household Consumption Distribution, 1981 - 2023}
